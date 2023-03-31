@@ -1,0 +1,57 @@
+@import "../../assets/scss/mixin";
+.modal-wrapper{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+  .modal-dialog{
+    min-height: calc(100% - (1.75rem * 2));
+    max-width: 542px;
+    margin: 1.75rem auto;
+    display: flex;
+    padding: 0 10px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    transition: transform .3s ease-out,-webkit-transform .3s ease-out;
+    .modal-content{
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      flex-direction: column;
+      width: 100%;
+      pointer-events: auto;
+      box-shadow: 0 32px 64px -12px rgba(16, 24, 40, 0.14);
+      border-radius: 10px;
+      background-clip: padding-box;
+      background: #ffffff;
+      border: none;
+      outline: 0;
+      .modal-body{
+        flex: 1 1 auto;
+        padding: 16px 80px 13px;
+        position: relative;
+        @media (max-width: $breakpoint_tablet) {
+          padding: 20px 15px;
+        }
+        .modal-head {
+          h2 {
+            margin: 0;
+            text-align: center;
+          }
+          img {
+            cursor: pointer;
+            position: absolute;
+            right: 24px;
+            top: 20px;
+          }
+        }
+      }
+    }
+  }
+}

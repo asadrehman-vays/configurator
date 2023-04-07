@@ -28,7 +28,7 @@ export default function ZentraleForm() {
   ];
   return (
     <>
-      <h2 className="sidebar-title">Zentrale</h2>
+      <h2 className="sidebar-title">System</h2>
       <aside className="side-widgets">
         <ul className="list-none flex column-direction">
           <li>

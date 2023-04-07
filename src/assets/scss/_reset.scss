@@ -24,7 +24,7 @@ body {
   -webkit-text-size-adjust:  $w_100;
   -ms-text-size-adjust: none;
   font: 16px/25px var(--font-family);
-  overflow-x: $hidden;
+  //overflow-x: $hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   word-break: break-word;
@@ -138,7 +138,7 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 #wrapper {
   width: $w_100;
   position: $position_rel;
-  overflow: $hidden;
+  //overflow: $hidden;
 }
 .container{
   width: $w_100;

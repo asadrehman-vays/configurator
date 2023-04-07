@@ -1,10 +1,10 @@
 export default function ServiceForm({ activeIndexes, setActiveIndexes }) {
   const functionSelection = [
     { label: "App", included: "inklusive" },
-    { label: "Sprachsteuerung", included: "+ 1.239,50€" },
-    { label: "Fernbedienung", included: "+ 1.232,00€" },
-    { label: "Szenenschalter", included: "+ 1.232,00€" },
     { label: "Bedienpanel", included: "+ 1.232,00€" },
+    { label: "Szenenschalter", included: "+ 1.232,00€" },
+    { label: "Fernbedienung", included: "+ 1.232,00€" },
+    { label: "Sprachsteuerung", included: "+ 1.239,50€" },
   ];
 
   return (

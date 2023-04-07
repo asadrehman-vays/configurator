@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import Select from "react-dropdown-select";
 import listIcon1 from "../../../../assets/images/icon1.svg";
 import listIcon2 from "../../../../assets/images/icon2.svg";
 import listIcon3 from "../../../../assets/images/icon3.svg";
+import DatePicker from "react-multi-date-picker"
 
 export default function InstallationProcess() {
   const [installationsserviceValues, setInstallationsserviceValues] = useState(
     []
   );
-  const [startDate, setStartDate] = useState(new Date());
+
+  const [values, setValues] = useState(new Date())
 
   const priceIncludedList = [
     "Montage vom zertifizierten Elektriker",
@@ -69,18 +69,25 @@ export default function InstallationProcess() {
       value: 1,
       label: [
         <p>
-          {" "}
-          Keine Integration<small className="ml-auto">Inklusive</small>
+          Keine Integration<small className="ml-auto">+ 0,00 €</small>
         </p>,
       ],
     },
     {
       value: 2,
-      label: "3 Integrationen",
+      label: [
+        <p>
+          3 Integrationen<small className="ml-auto">+ 0,00 €</small>
+        </p>,
+      ],
     },
     {
       value: 3,
-      label: "Unbegrenzt Integrationen",
+      label: [
+        <p>
+          Unbegrenzt Integrationen<small className="ml-auto">+ 0,00 €</small>
+        </p>,
+      ],
     },
   ];
 
@@ -104,21 +111,33 @@ export default function InstallationProcess() {
       value: 1,
       label: [
         <p>
-          0 Jahre<small className="ml-auto">Inklusive</small>
+          1 Jahre<small className="ml-auto">+ 0,00€</small>
         </p>,
       ],
     },
     {
       value: 2,
-      label: "1 Jahr",
+      label: [
+        <p>
+          2 Jahre<small className="ml-auto">+ 0,00€</small>
+        </p>,
+      ],
     },
     {
       value: 3,
-      label: "3 Jahre",
+      label: [
+        <p>
+          3 Jahre<small className="ml-auto">+ 0,00€</small>
+        </p>,
+      ],
     },
     {
       value: 5,
-      label: "5 Jahre",
+      label: [
+        <p>
+          5 Jahre<small className="ml-auto">+ 0,00€</small>
+        </p>,
+      ],
     },
   ];
 
@@ -127,17 +146,25 @@ export default function InstallationProcess() {
       value: 1,
       label: [
         <p>
-          2 Jahre<small className="ml-auto">Inklusive</small>
+          2 Jahre<small className="ml-auto">+ 0,00 €</small>
         </p>,
       ],
     },
     {
       value: 3,
-      label: "3 Jahre",
+      label: [
+        <p>
+          3 Jahre<small className="ml-auto">+ 0,00 €</small>
+        </p>,
+      ],
     },
     {
       value: 5,
-      label: "5 Jahre",
+      label: [
+        <p>
+          5 Jahre<small className="ml-auto">+ 0,00 €</small>
+        </p>,
+      ],
     },
   ];
 
@@ -185,14 +212,16 @@ export default function InstallationProcess() {
             />
           </li>
           <li className="content-justify-center items-center">
-            <button className="simple-btn">Details zur Bedienung</button>
+            <button className="simple-btn">Details zur Installation</button>
           </li>
         </ul>
         <ul className="list-none flex column-direction">
           <li>
             <label htmlFor="">Installation Wunschtermin</label>
-            {/*<Select options={installationsserviceOptions} />*/}
-            <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+            <DatePicker
+                value={values}
+                onChange={setValues}
+            />
           </li>
           <li>
             <label htmlFor="">Heimautomatisierung</label>
@@ -230,7 +259,7 @@ export default function InstallationProcess() {
             />
           </li>
           <li className="content-justify-center items-center">
-            <button className="simple-btn">Details zur Bedienung</button>
+            <button className="simple-btn">Details zur Förderung</button>
           </li>
         </ul>
       </aside>

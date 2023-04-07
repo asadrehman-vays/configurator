@@ -6,6 +6,7 @@ h4 { font-size: 20px;}
 h5 { font-size: 18px;}
 h6 { font-size: 16px;}
 h1,h2,h3,h4,h5,h6 {
+  color: #122c44;
   a {
     color: var(--black-color);
   }
@@ -37,9 +38,6 @@ html {
     border-radius: 30px;
     min-height: 55px;
     padding: 2px 24px;
-    @media (max-width: $breakpoint_laptop) {
-      min-height: 50px;
-    }
     &:hover,&:focus,&:focus-within {
       outline: 0;
       box-shadow: none;
@@ -68,39 +66,55 @@ html {
       padding-left: 24px;
     }
   }
+  .react-dropdown-select-content {
+    & > span,
+    & > input {
+      color: #122c44;
+    }
+  }
   .react-dropdown-select-content,
   .react-dropdown-select-item {
     p {
       margin: 0;
       display: flex;
       align-items: center;
+      color: #122c44;
       small {
         font-size: 16px;
         font-weight: 600;
-        color: #323232;
+        color: #122c44;
         position: absolute;
         right: 46px;
         @media (max-width: $breakpoint_laptop) {
           font-size: 14px;
+          font-weight: 700;
         }
       }
     }
   }
   .react-dropdown-select-item-selected {
     p {
-      small { color: #ffffff}
+      small { color: #122c44;}
     }
   }
   .react-dropdown-select-dropdown-handle { margin-bottom: 3px;}
+
+  .react-dropdown-select-item:hover, .react-dropdown-select-item:focus { background: none;}
+  .react-dropdown-select-item-selected {
+    background: #F9FAFB !important;
+    color: #122c44 !important;
+    border-bottom: none !important;
+  }
+  .react-dropdown-select-item {color: #122c44 !important;}
 }
-.react-datepicker__input-container  {
+.rmdp-container  {
   position: relative;
   &:before {
     content: '\f107';
     font-family: FontAwesome;
     position: absolute;
     right: 30px;
-    top: 11px;
+    top: 15px;
     font-size: 16px;
     pointer-events: none;
   }
@@ -109,12 +123,21 @@ html {
     border: 1px solid #D0D5DD;
     border-radius: 30px;
     min-height: 55px;
-    padding: 2px 24px;
+    padding: 2px 50px 2px 24px;
     width: 100%;
+    &:focus{ box-shadow: none}
     @media (max-width: $breakpoint_laptop) {
       min-height: 50px;
     }
   }
+  .rmdp-panel-body li {
+    background: transparent;
+    span {
+      color: #122c44;
+      font-size: 12px;
+    }
+  }
+  .rmdp-day.rmdp-selected span:not(.highlight) { background: #292D36}
 }
 .react-datepicker-popper {
   width: 100%;

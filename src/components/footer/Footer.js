@@ -67,7 +67,7 @@ export default function Footer() {
                 <small>inkl. MwSt</small>
               </h2>
               <span>
-                <small className="discount">1.299€</small>999€
+                <small className="discount">1.299€</small>999€ <small className="mobile">inkl. MwSt </small>
               </span>
             </div>
             <div className="button-wrapper ml-auto">

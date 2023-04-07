@@ -10,16 +10,21 @@ import calendarIcon from "../../assets/images/calendar.svg"
 import downArrow from "../../assets/images/down-arrow.svg"
 import {Link} from "react-router-dom";
 import OutsideClickHandler from "react-outside-click-handler";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 export default function Header() {
     const [isOpenDropDown, setIsOpenDropDown] = useState(false);
-
+    const [scroll, setScroll] = useState(false);
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            setScroll(window.scrollY > 50);
+        });
+    }, []);
     const dropDownOpenFun = () => {
         setIsOpenDropDown(!isOpenDropDown)
     }
     return(
-        <header id="main_header" className={`${isOpenDropDown ? "layer_show" : ""}`}>
+        <header id="main_header" className={`${isOpenDropDown ? "layer_show" : ""} ${scroll ? "active" : ""}`}>
             <div className="container">
                 <div className="header-wrapper flex content-justify-between items-center">
                     <Link to="/"><img src={logo} alt="logo"/></Link>

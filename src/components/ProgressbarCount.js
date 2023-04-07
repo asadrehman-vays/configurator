@@ -1,10 +1,12 @@
+import iIcon from "../assets/images/iIcon.svg";
+
 export default function ProgressbarCount() {
     return(
         <div className="progressbar-counter">
             <ul className="list-none flex">
                 <li>
                     <section>
-                        <h5>Ihre Ausstattung im Vergleich</h5>
+                        <h5>Ihre Ausstattung im Vergleich <img src={iIcon} alt="iIcon"/></h5>
                         <ul className="list-none flex flex-wrap">
                             <li><h6>Effizienz</h6> <span className="ml-auto"><span className="slider"><small style={{width: "10%"}}></small></span>2/10</span></li>
                             <li><h6>Sicherheit</h6> <span className="ml-auto"><span className="slider"><small style={{width: "50%"}}></small></span>5/10</span></li>
@@ -15,7 +17,7 @@ export default function ProgressbarCount() {
                 </li>
                 <li>
                     <section>
-                        <h5>Ihre Ersparnis</h5>
+                        <h5 className="flex content-justify-between">Ihre Ersparnis <img src={iIcon} alt="iIcon"/></h5>
                         <ul className="list-none flex flex-wrap">
                             <li><h6>Heizkosten</h6> <span className="ml-auto"><span className="slider"><small style={{width: "10%"}}></small></span>2/10</span></li>
                             <li><h6>CO<sub>2</sub> Emmisionen</h6> <span className="ml-auto"><span className="slider"><small style={{width: "50%"}}></small></span>5/10</span></li>

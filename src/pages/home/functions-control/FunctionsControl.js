@@ -6,19 +6,22 @@ import progressIcon5 from "../../../assets/images/progressIcon5.svg";
 import progressIcon6 from "../../../assets/images/progressIcon6.svg";
 import progressIcon7 from "../../../assets/images/progressIcon7.svg";
 import FunctionForm from "./functions-form/FunctionForm";
-import icon1 from "../../../assets/images/6.svg";
+import icon1 from "../../../assets/images/1.svg";
 import icon2 from "../../../assets/images/2.svg";
-import icon3 from "../../../assets/images/13.svg";
-import icon4 from "../../../assets/images/10.svg";
-import icon5 from "../../../assets/images/9.svg";
-import icon6 from "../../../assets/images/3.svg";
-import icon7 from "../../../assets/images/8.svg";
-import icon8 from "../../../assets/images/7.svg";
-import icon9 from "../../../assets/images/5.svg";
-import icon10 from "../../../assets/images/12.svg";
+import icon3 from "../../../assets/images/3.svg";
+import icon4 from "../../../assets/images/4.svg";
+import icon5 from "../../../assets/images/5.svg";
+import icon6 from "../../../assets/images/6.svg";
+import icon7 from "../../../assets/images/7.svg";
+import icon8 from "../../../assets/images/8.svg";
+import icon9 from "../../../assets/images/9.svg";
+import icon10 from "../../../assets/images/10.svg";
 import icon11 from "../../../assets/images/11.svg";
-import icon12 from "../../../assets/images/4.svg";
-import icon13 from "../../../assets/images/1.svg";
+import icon12 from "../../../assets/images/12.svg";
+import icon13 from "../../../assets/images/13.svg";
+import icon14 from "../../../assets/images/14.svg";
+import icon15 from "../../../assets/images/11.1.svg";
+import icon16 from "../../../assets/images/13.1.svg";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { NavLink } from "react-router-dom";
@@ -42,6 +45,9 @@ export default function FunctionsControl() {
     { icon: icon11 },
     { icon: icon12 },
     { icon: icon13 },
+    { icon: icon14 },
+    { icon: icon15 },
+    { icon: icon16 }
   ];
   const value = 0.36;
   const getClassName = (index) => {
@@ -72,7 +78,7 @@ export default function FunctionsControl() {
             </figcaption>
           </figure>
           <div className="progressbar-group flex">
-            <section>
+            <section className="without_subtitle">
               <div className="titles flex items-center content-justify-between">
                 <h3>Ihre Ausstattung im Vergleich</h3>
                 <NavLink to="/">Mehr Info</NavLink>
@@ -176,7 +182,6 @@ export default function FunctionsControl() {
               </ul>
             </section>
           </div>
-          <ProgressbarCount />
         </div>
       </div>
       <div className="sidebar-options">
@@ -185,6 +190,7 @@ export default function FunctionsControl() {
           setActiveIndexes={setActiveIndexes}
         />
       </div>
+      <ProgressbarCount />
     </div>
   );
 }

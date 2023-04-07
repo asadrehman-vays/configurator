@@ -10,20 +10,20 @@ export default function FunctionForm({ activeIndexes, setActiveIndexes }) {
   }
 
   const functionSelection = [
-    { label: "Heizung", included: "inklusive" },
+    { label: "Heizung", included: "gewählt" },
     { label: "Beschattung", included: "+ 1.232,00€" },
     { label: "Beleuchtung", included: "+ 1.232,00€" },
     { label: "Energie", included: "+ 1.232,00€" },
     { label: "Steckdosen", included: "+ 1.232,00€" },
-    { label: "Kameras", included: "+ 1.532,00€" },
+    { label: "Bewegungsmelder", included: "+ 1.232,00€" },
     { label: "Alarmsystem", included: "+ 1.532,00€" },
+    { label: "Kameras", included: "+ 1.532,00€" },
     { label: "Rauchmelder", included: "+ 1.532,00€" },
     { label: "Türstation", included: "+ 4.578,20€" },
     { label: "Zugang", included: "+ 4.578,20€" },
     { label: "Sound", included: "+ 4.578,20€" },
     { label: "Garten", included: "+ 1.232,00€" },
-    { label: "Lüftung", included: "+ 1.232,00€" },
-    { label: "Sonstiges", included: "auf Anfrage" },
+    { label: "Lüftung", included: "+ 1.232,00€" }
   ];
 
   const handleChange = (e) => {
@@ -92,9 +92,24 @@ export default function FunctionForm({ activeIndexes, setActiveIndexes }) {
               </li>
             );
           })}
+          <li>
+            <label
+                htmlFor={`control-check-x`}
+                className={`check-box`}
+            >
+              <input
+                  type="checkbox"
+                  name="languages"
+                  id={`control-check-x`}
+              />
+              <span>
+                    Sonstiges <strong>auf Anfrage</strong>
+                  </span>
+            </label>
+          </li>
         </ul>
         <div className="flex content-justify-center items-center">
-          <button className="simple-btn">Details zur Intention</button>
+          <button className="simple-btn">Funktionen vergleichen</button>
         </div>
       </aside>
     </>

@@ -28,6 +28,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   word-break: break-word;
+  letter-spacing: 0.2px;
   @media (max-width: $breakpoint_laptop) {
     font-size: 14px;
   }
@@ -38,6 +39,12 @@ h1,h2,h3,h4,h5,h6 {
 }
 .w-100 {
   width: $w_100 !important;
+}
+.w-60 {
+  width: 60% !important;
+}
+.w-40 {
+  width: 40% !important;
 }
 .max-width {
   @include max_width;
@@ -287,4 +294,12 @@ table > tbody + tbody {
   @media (max-width: $breakpoint_laptop) {
     padding: 11px 10px;
   }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
 }

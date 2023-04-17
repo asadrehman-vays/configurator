@@ -7,9 +7,11 @@ import icon5 from "../../../assets/images/a5.svg";
 import "react-circular-progressbar/dist/styles.css";
 import { useState } from "react";
 import { Link } from "react-scroll";
+import {DetailedSliderModal} from "../../../components/modals/DetailedSliderModal";
 
 export default function ServiceControl() {
   const [activeIndexes, setActiveIndexes] = useState([0]);
+  const [openDetailedSlideModal, setOpenDetailedSlideModal] = useState(false);
   const controlOptions = [
     { icon: icon1 },
     { icon: icon2 },
@@ -23,35 +25,50 @@ export default function ServiceControl() {
   };
 
   return (
-    <div className="slide-wrapper service_control flex items-start" id="three">
-      <Link activeClass="active" smooth spy offset={-150} to="three"></Link>
-      <div className="content-side">
-        <div className="image-wrapper flex column-direction">
-          <figure>
-            <div className="scale-image img_two"></div>
-            <figcaption>
-              {controlOptions.map(({ icon }, index) => {
-                return (
-                  <span
-                    className={`${getClassName(
-                      index
-                    )} control-options services-list opo-${index + 1}`}
-                    key={index}
-                  >
+      <>
+        <div className="slide-wrapper service_control flex items-start" id="three">
+          <Link activeClass="active" smooth spy offset={-150} to="three"></Link>
+          <div className="content-side">
+            <div className="image-wrapper flex column-direction">
+              <figure>
+                <div className="scale-image img_two"></div>
+                <figcaption>
+                  {controlOptions.map(({ icon }, index) => {
+                    return (
+                        <span
+                            className={`${getClassName(
+                                index
+                            )} control-options services-list opo-${index + 1}`}
+                            key={index}
+                        >
                     <img src={icon} alt="icon" />
                   </span>
-                );
-              })}
-            </figcaption>
-          </figure>
+                    );
+                  })}
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div className="sidebar-options">
+            <ServiceForm
+                activeIndexes={activeIndexes}
+                setActiveIndexes={setActiveIndexes}
+                openModal={() => {
+                  setOpenDetailedSlideModal(!openDetailedSlideModal);
+                }}
+            />
+          </div>
         </div>
-      </div>
-      <div className="sidebar-options">
-        <ServiceForm
-          activeIndexes={activeIndexes}
-          setActiveIndexes={setActiveIndexes}
-        />
-      </div>
-    </div>
+        {
+            openDetailedSlideModal === true &&
+            <DetailedSliderModal
+                modalExtraClass="detailed-modal-wrapper"
+                button_text="Anruf anfordern"
+                closeModal={() => {
+                  setOpenDetailedSlideModal(!openDetailedSlideModal);
+                }}
+            />
+        }
+      </>
   );
 }

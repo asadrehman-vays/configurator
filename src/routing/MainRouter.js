@@ -8,6 +8,7 @@ import UserLayout from "../layouts/UserLayout";
 import ErrorPage from "../components/ErrorPage";
 import Home from "../pages/home/Home";
 import SmartHouseDetail from "../pages/smart-house-detail/SmartHouseDetail";
+import Typography from "../components/Typography";
 
 export default function MainRouter() {
   const router = createHashRouter(
@@ -16,6 +17,7 @@ export default function MainRouter() {
         <Route path="/" errorElement={<ErrorPage />} element={<UserLayout />}>
           <Route index element={<Home />}></Route>
           <Route path="/smart-house" element={<SmartHouseDetail />}></Route>
+          <Route path="/modals" element={<Typography />}></Route>
         </Route>
       </>
     )

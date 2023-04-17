@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-export default function FunctionForm({ activeIndexes, setActiveIndexes }) {
+export default function FunctionForm({ activeIndexes, setActiveIndexes, openModal }) {
   const [data, setData] = useState({
     languages: []
   });
@@ -11,8 +11,8 @@ export default function FunctionForm({ activeIndexes, setActiveIndexes }) {
 
   const functionSelection = [
     { label: "Heizung", included: "gewählt" },
-    { label: "Beschattung", included: "+ 1.232,00€" },
     { label: "Beleuchtung", included: "+ 1.232,00€" },
+    { label: "Beschattung", included: "+ 1.232,00€" },
     { label: "Energie", included: "+ 1.232,00€" },
     { label: "Steckdosen", included: "+ 1.232,00€" },
     { label: "Bewegungsmelder", included: "+ 1.232,00€" },
@@ -109,7 +109,7 @@ export default function FunctionForm({ activeIndexes, setActiveIndexes }) {
           </li>
         </ul>
         <div className="flex content-justify-center items-center">
-          <button className="simple-btn">Funktionen vergleichen</button>
+          <button className="simple-btn" onClick={openModal}>Funktionen vergleichen</button>
         </div>
       </aside>
     </>

@@ -7,7 +7,7 @@
     padding: 50px 0 77px;
   }
   @media (max-width: $breakpoint_mobile_portrait) {
-    padding: 30px 0 0;
+    padding: 30px 0 90px;
   }
   .collapse-btn {
     background: none;
@@ -99,10 +99,10 @@
       background: #ffffff;
       left: 0;
       top: 115px;
-      width: calc(100vw - 416px);
+      width: calc(100vw - 454px);
       height: calc(100vh - 191px);
       display: flex;
-      align-items: center;
+      //align-items: center;
       opacity: 0;
       @include transition;
       @media (min-width: 1920px) {
@@ -141,17 +141,23 @@
     }
     .image-wrapper {
       margin: 0 auto;
-      width: 864px;
+      width: 900px;
       overflow: hidden;
       height: 100%;
+      @media (max-width: $breakpoint_mobile_portrait) {
+        .swiper-slide {
+          height: 277px;
+        }
+      }
       @media (min-width: 1920px) {
         height: 746px;
       }
       @media (max-width: $breakpoint_minix_laptop) {
-        width: 856px;
+        margin-right: 10px;
       }
       @media (max-width: $breakpoint_big_tablet) {
         width: 800px;
+        margin-right: auto;
       }
       @media (max-width: $breakpoint_tablet) {
         width: 705px;
@@ -169,7 +175,7 @@
         }
         &>img,
         .scale-image {
-          width: 864px;
+          width: 900px;
           max-width: 100%;
           height: 100%;
           object-fit: cover;
@@ -296,11 +302,6 @@
               display: block;
               color: #475467;
             }
-            a.link {
-              font-weight: 700;
-              display: inline-block;
-              text-decoration: underline;
-            }
             a {
               &.pdf-down {
                 font-weight: 400;
@@ -315,7 +316,7 @@
             }
           }
         }
-        &:last-child { margin-bottom: 0}
+        &:last-child { margin-bottom: 30px}
         &.intention-wrapper {
           & > ul {
             & > li {
@@ -412,7 +413,9 @@
   @include transition;
   @media (max-width: $breakpoint_laptop) {
     height: 48px;
-    font-size: 14px;
+  }
+  @media (max-width: $breakpoint_mobile_portrait) {
+    font-size: 16px;
   }
   &.transparent {
     border-color: #292D36;
@@ -442,16 +445,16 @@
   border-radius: 100%;
   justify-content: center;
   align-items: center;
-  padding: 11px;
+  //padding: 11px;
   position: absolute;
   @media (max-width: $breakpoint_tablet) {
-    padding: 8px;
+    padding: 6px;
     width: 30px;
     height: 30px;
   }
   &.services-list {
     &.opo-1{
-      left: 348px;
+      left: 365px;
       bottom: 58px;
       top: auto;
       @media (max-width: $breakpoint_big_tablet) {
@@ -468,8 +471,8 @@
       }
     }
     &.opo-2{
-      right: 286px;
-      bottom: 253px;
+      right: 295px;
+      bottom: 270px;
       left: unset;
       @media (max-width: $breakpoint_big_tablet) {
         right: 270px;
@@ -481,13 +484,12 @@
       &:before {
         bottom: -8px;
         right: 50%;
-        transform: translate(50%, 0);
       }
     }
     &.opo-3{
       left: unset;
-      right: 175px;
-      bottom: 247px;
+      right: 183px;
+      bottom: 255px;
       @media (max-width: $breakpoint_big_tablet) {
         right: 165px;
         bottom: 235px;
@@ -498,7 +500,7 @@
       }
     }
     &.opo-4{
-      left: 229px;
+      left: 240px;
       bottom: 121px;
       @media (max-width: $breakpoint_big_tablet) {
         left: 215px;
@@ -517,7 +519,7 @@
       }
     }
     &.opo-5{
-      left: 418px;
+      left: 437px;
       bottom: 129px;
       @media (max-width: $breakpoint_big_tablet) {
         left: 390px;
@@ -529,8 +531,8 @@
     }
   }
   &.opo-1{
-    left: 232px;
-    bottom: 116px;
+    left: 250px;
+    bottom: 140px;
     @media (max-width: $breakpoint_big_tablet) {
       left: 220px;
     }
@@ -540,8 +542,8 @@
     }
   }
   &.opo-2{
-    left: 145px;
-    bottom: 190px;
+    left: 165px;
+    bottom: 200px;
     @media (max-width: $breakpoint_big_tablet) {
       bottom: 155px;
       left: 135px;
@@ -558,8 +560,8 @@
     }
   }
   &.opo-3{
-    left: 100px;
-    bottom: 310px;
+    left: 105px;
+    bottom: 312px;
     @media (max-width: $breakpoint_big_tablet) {
       left: 85px;
       bottom: 270px;
@@ -582,8 +584,8 @@
     }
   }
   &.opo-5{
-    left: 330px;
-    bottom: 71px;
+    left: 345px;
+    bottom: 86px;
     @media (max-width: $breakpoint_big_tablet) {
       left: 268px;
     }
@@ -593,8 +595,8 @@
     }
   }
   &.opo-6{
-    left: 25px;
-    bottom: 155px;
+    left: 28px;
+    bottom: 165px;
     @media (max-width: $breakpoint_big_tablet) {
       left: 16px;
     }
@@ -614,8 +616,8 @@
     }
   }
   &.opo-7{
-    left: 332px;
-    bottom: 256px;
+    left: 346px;
+    bottom: 265px;
     @media (max-width: $breakpoint_big_tablet) {
       left: 270px;
       bottom: 210px;
@@ -627,7 +629,7 @@
   }
   &.opo-8{
     left: 80px;
-    bottom: 215px;
+    bottom: 230px;
     @media (max-width: $breakpoint_big_tablet) {
       left: 100px;
       bottom: 207px;
@@ -649,8 +651,8 @@
     }
   }
   &.opo-9{
-    left: 430px;
-    bottom: 192px;
+    left: 450px;
+    bottom: 200px;
     @media (max-width: $breakpoint_big_tablet) {
       left: 355px;
       bottom: 155px;
@@ -665,8 +667,8 @@
     }
   }
   &.opo-10{
-    right: 268px;
-    bottom: 160px;
+    right: 280px;
+    bottom: 165px;
     @media (max-width: $breakpoint_big_tablet) {
       right: 218px;
       bottom: 130px;
@@ -678,7 +680,7 @@
   }
   &.opo-11{
     right: 140px;
-    bottom: 125px;
+    bottom: 147px;
     @media (max-width: $breakpoint_big_tablet) {
       right: 115px;
     }
@@ -689,8 +691,8 @@
   }
   &.opo-12{
     left: unset;
-    bottom: 115px;
-    right: 380px;
+    bottom: 130px;
+    right: 400px;
     @media (max-width: $breakpoint_big_tablet) {
       right: 310px;
     }
@@ -720,7 +722,7 @@
     }
   }
   &.opo-14{
-    left: 382px;
+    left: 400px;
     bottom: 145px;
     @media (max-width: $breakpoint_big_tablet) {
       left: 320px;
@@ -732,7 +734,7 @@
     }
   }
   &.opo-15{
-    right: 315px;
+    right: 330px;
     bottom: 110px;
     @media (max-width: $breakpoint_big_tablet) {
       right: 255px;
@@ -865,7 +867,7 @@
     }
   }
   .CircularProgressbar{
-    background: #EAECF0;
+    background: #F9FAFB;
     border-radius: 100%;
     //border: 1px solid #EFEFEF;
     @media (max-width: $breakpoint_laptop) {
@@ -1262,4 +1264,10 @@
       }
     }
   }
+}
+button.link {
+  font-weight: 700;
+  display: inline-block;
+  text-decoration: underline;
+  font-size: 16px;
 }

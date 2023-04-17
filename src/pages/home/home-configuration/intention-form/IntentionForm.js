@@ -1,8 +1,9 @@
 import {useState} from "react";
 
-export default function IntentionForm() {
+export default function IntentionForm(props) {
   const [checked, setChecked] = useState([]);
-  const [checkList, setCheckList] = useState(false)
+  const [checkList, setCheckList] = useState(false);
+
   const showCheckList = () => {
     setCheckList(!checkList);
   }
@@ -60,7 +61,10 @@ export default function IntentionForm() {
           })}
         </ul>
         <div className="content-justify-center flex items-center">
-          <button className="simple-btn">Details zu den Vorteilen</button>
+          <button
+              className="simple-btn"
+              onClick={props.openModal}
+          >Details zu den Vorteilen</button>
         </div>
       </aside>
     </>

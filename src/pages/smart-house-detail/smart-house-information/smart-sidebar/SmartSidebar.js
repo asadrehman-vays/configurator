@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
 
-export default function SmartSidebar() {
+export default function SmartSidebar(props) {
     return(
         <>
             <button className="collapse-btn"><i className="fa fa-angle-up"></i> Konfiguration ändern</button>
@@ -42,8 +42,8 @@ export default function SmartSidebar() {
                 <div className="button-box flex column-direction items-center content-justify-center">
                     <h4>Gesamtpreis <span>999,00€ <small>inkl. MwSt</small></span></h4>
                     <button className="submit-button">Zur Kasse</button>
-                    <button className="submit-button transparent">Bestellung prüfen lassen</button>
-                    <Link to="/">Häufig gestellte Fragen</Link>
+                    <button onClick={props.openModal} className="submit-button transparent">Bestellung prüfen lassen</button>
+                    <button onClick={props.faqOpenModal} className="transparent-button link">Häufig gestellte Fragen</button>
                 </div>
                 <figure className="">
                     <img src={pay} alt="pay"/>

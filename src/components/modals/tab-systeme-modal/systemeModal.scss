@@ -1,0 +1,82 @@
+@import "../../../assets/scss/mixin";
+.modals-tabs {
+  margin-top: 18px;
+  margin-bottom: 132px;
+  ul {
+    li {
+      padding: 0 20px;
+      button {
+        &.active {
+          background: #01E994;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+.tabs-wrap-modal {
+  padding: 30px 0;
+}
+
+.table-responsive {
+  table {
+    tr {
+      td {
+        vertical-align: top;
+        padding: 0 12px;
+        figure {
+          margin: 0;
+          text-align: center;
+          img { width: auto}
+        }
+        span {
+          font-size: 15px;
+          color: #AFAFAF;
+          display: block;
+          margin-bottom: 5px;
+          white-space: nowrap;
+          font-weight: 600;
+        }
+        h2 {
+          font-weight: 700;
+          margin: 0 0 17px;
+        }
+        h6 {
+          margin: 0;
+          color: #7C7C7C;
+        }
+        p {
+          font-size: 14px;
+          line-height: 18px;
+          color: #7C7C7C;
+          margin: 0 0 60px;
+          @media (max-width: $breakpoint_mobile_portrait) {
+            margin-bottom: 30px;
+          }
+        }
+        ul {
+          padding-left: 24px;
+          margin: 8px 0 55px;
+          @media (max-width: $breakpoint_mobile_portrait) {
+            margin-bottom: 24px;
+          }
+          li {
+            color: #7C7C7C;
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+        a {
+          text-decoration: underline;
+          color: #475467;
+          font-size: 12px;
+          line-height: 15px;
+          display: flex;
+          align-items: center;
+          margin-top: 8px;
+          img { margin-left: 3px;}
+        }
+      }
+    }
+  }
+}

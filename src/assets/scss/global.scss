@@ -167,3 +167,26 @@ html {
     }
   }
 }
+.desktop-view {
+  .modal-dialog {
+    & > .modal-content {
+      @media (max-width: $breakpoint_mobile_landscape) {
+        display: none !important;
+      }
+    }
+  }
+}
+.mobile-view {
+  width: 100%;
+  img { width: auto !important;}
+  display: none;
+  .swiper-slide .modal-content {
+    background: #ffffff !important;
+    @media (max-width: $breakpoint_mobile_portrait) {
+      height: 674px;
+    }
+  }
+  @media (max-width: $breakpoint_mobile_landscape) {
+    display: block;
+  }
+}

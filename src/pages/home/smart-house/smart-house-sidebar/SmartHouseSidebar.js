@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
 
-export default function SmartHouseSidebar() {
+export default function SmartHouseSidebar(props) {
     return(
         <>
             <h2 className="sidebar-title">Ihre Smart Home Konfiguration</h2>
@@ -15,9 +15,9 @@ export default function SmartHouseSidebar() {
                     <span>5.5.23   |   12.5.23  |  19.5.23</span>
                     <h6>Installationsdauer</h6>
                     <span>ca. 8 Tage</span>
-                    <Link to="/smart-house" className="submit-button">In den Warenkorb</Link>
-                    <button className="submit-button transparent">Persönliche Fachberatung</button>
-                    <Link to="/" className="link">Häufig gestellte Fragen</Link>
+                    <button onClick={props.warenkorbModal} className="submit-button">In den Warenkorb</button>
+                    <button onClick={props.expertAdviceModal} className="submit-button transparent">Persönliche Fachberatung</button>
+                    <button onClick={props.openModal} className="transparent-button link">Häufig gestellte Fragen</button>
                 </section>
             </aside>
             <h2 className="sidebar-title">Bewertungen</h2>

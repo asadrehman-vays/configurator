@@ -59,27 +59,6 @@ export default function Footer() {
             <Link to="/"><img src={chatIcon} alt="chatIcon"/></Link>
           </section>
         </div>
-        <footer id="footer">
-          <div className="container flex items-center">
-            <div className="price-wrapper flex items-center">
-              <h2>
-                Gesamtpreis
-                <small>inkl. MwSt</small>
-              </h2>
-              <span>
-                <small className="discount">1.299€</small>999€ <small className="mobile">inkl. MwSt </small>
-              </span>
-            </div>
-            <div className="button-wrapper ml-auto">
-              <Link to="/" className="submit-button transparent">
-                Konfiguration speichern
-              </Link>
-              <Link to="/smart-house" className="submit-button">
-                In den Warenkorb
-              </Link>
-            </div>
-          </div>
-        </footer>
       </>
   );
 }

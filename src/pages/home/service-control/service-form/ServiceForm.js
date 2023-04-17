@@ -1,4 +1,4 @@
-export default function ServiceForm({ activeIndexes, setActiveIndexes }) {
+export default function ServiceForm({ activeIndexes, setActiveIndexes,openModal }) {
   const functionSelection = [
     { label: "App", included: "inklusive" },
     { label: "Bedienpanel", included: "+ 1.232,00€" },
@@ -43,7 +43,7 @@ export default function ServiceForm({ activeIndexes, setActiveIndexes }) {
             );
           })}
           <li className="content-justify-center items-center">
-            <button className="simple-btn">Details zur Bedienung</button>
+            <button className="simple-btn" onClick={openModal}>Details zur Bedienung</button>
           </li>
         </ul>
       </aside>

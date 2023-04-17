@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Select from "react-dropdown-select";
 
-export default function ZentraleForm() {
+export default function ZentraleForm(props) {
   const [zentraleValues, setZentraleValues] = useState([
     {
       value: 1,
@@ -42,7 +42,7 @@ export default function ZentraleForm() {
             />
           </li>
           <li className="content-justify-center items-center">
-            <button className="simple-btn">Systeme vergleichen</button>
+            <button className="simple-btn" onClick={props.openModal}>Systeme vergleichen</button>
           </li>
         </ul>
       </aside>

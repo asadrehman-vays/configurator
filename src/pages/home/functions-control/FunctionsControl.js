@@ -28,9 +28,12 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { Link } from "react-scroll";
 import ProgressbarCount from "../../../components/ProgressbarCount";
+import {FunktionenModal} from "../../../components/modals/funktionen-modal/FunktionenModal";
 
 export default function FunctionsControl() {
   const [activeIndexes, setActiveIndexes] = useState([0]);
+  const [openFunktionen, setOpenFunktionen] = useState(false);
+
   const controlOptions = [
     { icon: icon1 },
     { icon: icon2 },
@@ -56,141 +59,157 @@ export default function FunctionsControl() {
   };
 
   return (
-    <div className="slide-wrapper function_control flex items-start" id="two">
-      <Link activeClass="active" smooth spy offset={-150} to="two"></Link>
-      <div className="content-side">
-        <div className="image-wrapper flex column-direction">
-          <figure>
-            <div className="scale-image img_one"></div>
-            <figcaption>
-              {controlOptions.map(({ icon }, index) => {
-                return (
-                  <span
-                    className={`${getClassName(index)} control-options opo-${
-                      index + 1
-                    }`}
-                    key={index}
-                  >
+      <>
+        <div className="slide-wrapper function_control flex items-start" id="two">
+          <Link activeClass="active" smooth spy offset={-150} to="two"></Link>
+          <div className="content-side">
+            <div className="image-wrapper flex column-direction">
+              <figure>
+                <div className="scale-image img_one"></div>
+                <figcaption>
+                  {controlOptions.map(({ icon }, index) => {
+                    return (
+                        <span
+                            className={`${getClassName(index)} control-options opo-${
+                                index + 1
+                            }`}
+                            key={index}
+                        >
                     <img src={icon} alt="icon" />
                   </span>
-                );
-              })}
-            </figcaption>
-          </figure>
-          <div className="progressbar-group flex">
-            <section className="without_subtitle">
-              <div className="titles flex items-center content-justify-between">
-                <h3>Ihre Ausstattung im Vergleich</h3>
-                <NavLink to="/">Mehr Info</NavLink>
+                    );
+                  })}
+                </figcaption>
+              </figure>
+              <div className="progressbar-group flex">
+                <section className="without_subtitle">
+                  <div className="titles flex items-center content-justify-between">
+                    <h3>Ihre Ausstattung im Vergleich</h3>
+                    <NavLink to="/">Mehr Info</NavLink>
+                  </div>
+                  <ul className="flex list-none">
+                    <li>
+                      <small>
+                        <img src={progressIcon1} alt="progressIcon1" />
+                        2/10
+                      </small>
+                      <CircularProgressbar
+                          value={0.2}
+                          maxValue={1}
+                          text={`${value * 100}%`}
+                      />
+                      <span>Effizienz</span>
+                    </li>
+                    <li>
+                      <small>
+                        <img src={progressIcon2} alt="progressIcon2" />
+                        10/10
+                      </small>
+                      <CircularProgressbar
+                          value={1}
+                          maxValue={1}
+                          text={`${value * 100}%`}
+                      />
+                      <span>Komfort</span>
+                    </li>
+                    <li>
+                      <small>
+                        <img src={progressIcon3} alt="progressIcon3" />
+                        5/10
+                      </small>
+                      <CircularProgressbar
+                          value={0.5}
+                          maxValue={1}
+                          text={`${0.5 * 100}%`}
+                      />
+                      <span>Sicherheit</span>
+                    </li>
+                    <li>
+                      <small>
+                        <img src={progressIcon4} alt="progressIcon4" />
+                        2/10
+                      </small>
+                      <CircularProgressbar
+                          value={0.2}
+                          maxValue={1}
+                          text={`${value * 100}%`}
+                      />
+                      <span>Wertsteigerung</span>
+                    </li>
+                  </ul>
+                </section>
+                <section>
+                  <div className="titles flex items-center content-justify-between">
+                    <h3>Ihre Ersparnis</h3>
+                    <NavLink to="/">Mehr Info</NavLink>
+                  </div>
+                  <ul className="flex list-none">
+                    <li>
+                      <small>
+                        <img src={progressIcon5} alt="progressIcon5" />
+                        -35%
+                        <sub>bis zu</sub>
+                      </small>
+                      <CircularProgressbar
+                          value={1}
+                          maxValue={1}
+                          text={`${value * 100}%`}
+                      />
+                      <span>Heizkosten</span>
+                    </li>
+                    <li>
+                      <small>
+                        <img src={progressIcon6} alt="progressIcon6" />
+                        -50%
+                        <sub>bis zu</sub>
+                      </small>
+                      <CircularProgressbar
+                          value={1}
+                          maxValue={1}
+                          text={`${value * 100}%`}
+                      />
+                      <span>Stromkosten</span>
+                    </li>
+                    <li>
+                      <small>
+                        <img src={progressIcon7} alt="progressIcon7" />
+                        -40%
+                        <sub>bis zu</sub>
+                      </small>
+                      <CircularProgressbar
+                          value={1}
+                          maxValue={1}
+                          text={`${value * 100}%`}
+                      />
+                      <span>CO<sub>2</sub>Emmisionen</span>
+                    </li>
+                  </ul>
+                </section>
               </div>
-              <ul className="flex list-none">
-                <li>
-                  <small>
-                    <img src={progressIcon1} alt="progressIcon1" />
-                    2/10
-                  </small>
-                  <CircularProgressbar
-                    value={0.2}
-                    maxValue={1}
-                    text={`${value * 100}%`}
-                  />
-                  <span>Effizienz</span>
-                </li>
-                <li>
-                  <small>
-                    <img src={progressIcon2} alt="progressIcon2" />
-                    10/10
-                  </small>
-                  <CircularProgressbar
-                    value={1}
-                    maxValue={1}
-                    text={`${value * 100}%`}
-                  />
-                  <span>Komfort</span>
-                </li>
-                <li>
-                  <small>
-                    <img src={progressIcon3} alt="progressIcon3" />
-                    5/10
-                  </small>
-                  <CircularProgressbar
-                    value={0.5}
-                    maxValue={1}
-                    text={`${0.5 * 100}%`}
-                  />
-                  <span>Sicherheit</span>
-                </li>
-                <li>
-                  <small>
-                    <img src={progressIcon4} alt="progressIcon4" />
-                    2/10
-                  </small>
-                  <CircularProgressbar
-                    value={0.2}
-                    maxValue={1}
-                    text={`${value * 100}%`}
-                  />
-                  <span>Wertsteigerung</span>
-                </li>
-              </ul>
-            </section>
-            <section>
-              <div className="titles flex items-center content-justify-between">
-                <h3>Ihre Ersparnis</h3>
-                <NavLink to="/">Mehr Info</NavLink>
-              </div>
-              <ul className="flex list-none">
-                <li>
-                  <small>
-                    <img src={progressIcon5} alt="progressIcon5" />
-                    -35%
-                    <sub>bis zu</sub>
-                  </small>
-                  <CircularProgressbar
-                    value={1}
-                    maxValue={1}
-                    text={`${value * 100}%`}
-                  />
-                  <span>Heizkosten</span>
-                </li>
-                <li>
-                  <small>
-                    <img src={progressIcon6} alt="progressIcon6" />
-                    -50%
-                    <sub>bis zu</sub>
-                  </small>
-                  <CircularProgressbar
-                    value={1}
-                    maxValue={1}
-                    text={`${value * 100}%`}
-                  />
-                  <span>Stromkosten</span>
-                </li>
-                <li>
-                  <small>
-                    <img src={progressIcon7} alt="progressIcon7" />
-                    -40%
-                    <sub>bis zu</sub>
-                  </small>
-                  <CircularProgressbar
-                    value={1}
-                    maxValue={1}
-                    text={`${value * 100}%`}
-                  />
-                  <span>CO<sub>2</sub>Emmisionen</span>
-                </li>
-              </ul>
-            </section>
+            </div>
           </div>
+          <div className="sidebar-options">
+            <FunctionForm
+                activeIndexes={activeIndexes}
+                setActiveIndexes={setActiveIndexes}
+                openModal={() => {
+                  setOpenFunktionen(!openFunktionen);
+                }}
+            />
+          </div>
+          <ProgressbarCount />
         </div>
-      </div>
-      <div className="sidebar-options">
-        <FunctionForm
-          activeIndexes={activeIndexes}
-          setActiveIndexes={setActiveIndexes}
-        />
-      </div>
-      <ProgressbarCount />
-    </div>
+        {
+            openFunktionen === true &&
+            <FunktionenModal
+                modalExtraClass="funktionen-modal-wrapper"
+                modalTitle="Smart Home Funktionalitäten"
+                button_text="Mehr Vorteile von Smart Home"
+                closeModal={() => {
+                  setOpenFunktionen(!openFunktionen);
+                }}
+            />
+        }
+      </>
   );
 }

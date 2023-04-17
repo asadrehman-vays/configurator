@@ -5,7 +5,7 @@ import listIcon2 from "../../../../assets/images/icon2.svg";
 import listIcon3 from "../../../../assets/images/icon3.svg";
 import DatePicker from "react-multi-date-picker"
 
-export default function InstallationProcess() {
+export default function InstallationProcess(props) {
   const [installationsserviceValues, setInstallationsserviceValues] = useState(
     []
   );
@@ -212,7 +212,7 @@ export default function InstallationProcess() {
             />
           </li>
           <li className="content-justify-center items-center">
-            <button className="simple-btn">Details zur Installation</button>
+            <button onClick={props.openModal} className="simple-btn">Details zur Installation</button>
           </li>
         </ul>
         <ul className="list-none flex column-direction">
@@ -232,7 +232,7 @@ export default function InstallationProcess() {
             />
           </li>
           <li className="content-justify-center items-center w-100">
-            <button className="simple-btn">Beispiele Automatisierung</button>
+            <button onClick={props.automatisierungModal} className="simple-btn">Beispiele Automatisierung</button>
           </li>
           <li>
             <label htmlFor="">Integration vorhandener Systeme</label>
@@ -243,7 +243,7 @@ export default function InstallationProcess() {
             />
           </li>
           <li className="content-justify-center items-center">
-            <button className="simple-btn">Integrationen wählen</button>
+            <button onClick={props.integrationenModal} className="simple-btn">Integrationen wählen</button>
           </li>
         </ul>
       </aside>
@@ -259,7 +259,7 @@ export default function InstallationProcess() {
             />
           </li>
           <li className="content-justify-center items-center">
-            <button className="simple-btn">Details zur Förderung</button>
+            <button onClick={props.fordermittelModal} className="simple-btn">Details zur Förderung</button>
           </li>
         </ul>
       </aside>
@@ -283,7 +283,7 @@ export default function InstallationProcess() {
             />
           </li>
           <li className="content-justify-center items-center">
-            <button className="simple-btn">Details zum Wartungsservice</button>
+            <button onClick={props.wartungsserviceModal} className="simple-btn">Details zum Wartungsservice</button>
           </li>
         </ul>
       </aside>
@@ -299,7 +299,7 @@ export default function InstallationProcess() {
             />
           </li>
           <li className="content-justify-center items-center">
-            <button className="simple-btn">Details zur Gewährleistung</button>
+            <button onClick={props.gewahrleistungModal} className="simple-btn">Details zur Gewährleistung</button>
           </li>
         </ul>
       </aside>
@@ -320,7 +320,7 @@ export default function InstallationProcess() {
             );
           })}
           <li className="flex content-justify-center items-center">
-            <button className="simple-btn">Details zu Garantien</button>
+            <button onClick={props.garantienModal} className="simple-btn">Details zu Garantien</button>
           </li>
         </ul>
       </aside>
